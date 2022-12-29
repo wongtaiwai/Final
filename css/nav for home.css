@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html{
+    scroll-behavior: smooth;
+  }
+  
+  ::selection{
+    background-color: #48dbfb60;
+  }
+  
+  ::-webkit-scrollbar{
+    width: 10px;
+    background-color: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background-color: #353b48;
+  }
+
+  .navbar  {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1540px;
+    height: 70px;
+    top: 0;
+    background-color: rgb(123, 161, 197);
+    overflow: hidden;
+    font-size: 20px;
+    color: rgb(234, 247, 255);
+    opacity: 0.8;
+    z-index: 1000;
+  }
+
+
+
+
+.navbar {
+  animation: load2 1s linear;
+}
+
+.navbar:hover {
+  opacity: 0.95;
+}
+
+.navbar .navtitle {
+  padding-left: 50px;
+  width: 30%;
+}
+
+
+
+.navbar .navtitle strong {
+  font-size: 45px;
+  font-weight: bolder;
+}
+
+.navbar a {
+  display: block;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 1;
+  height: inherit;
+  line-height: 70px;
+  width: 120px;
+  text-align: center;
+  font-weight: bolder;
+  color: rgb(84, 109, 158);
+  transition: 0.5s;
+}
+
+.navbar .navanim {
+  position: absolute;
+  height: inherit;
+  z-index: 0;
+  background: rgb(155, 200, 240);
+  border-radius: 5px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+  width: 120px;
+}
+
+
+.navbar .home,
+a:nth-child(2):hover ~ .navanim {
+  width: 120px;
+  left: 500px;
+}
+
+.navbar .about,
+a:nth-child(3):hover ~ .navanim {
+  width: 120px;
+  left: 645px;
+}
+
+.navbar .blog,
+a:nth-child(4):hover ~ .navanim {
+  width: 120px;
+  left: 785px;
+}
+
+.navbar .album,
+a:nth-child(5):hover ~ .navanim {
+  width: 120px;
+  left: 930px;
+}
+
+.navbar .join,
+a:nth-child(6):hover ~ .navanim {
+  width: 120px;
+  left: 1070px;
+}
+
+/* bug 點的改善位*/
+.navbar 
+a:nth-child(7):hover ~ .navanim {
+  width: 120px;
+  left: 1075px;
+}
+
+
+.navbar .none {
+  width: 20%;
+}
+
+.menu-toggler {
+  background: none;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  z-index: 999;
+  display: none;
+  
+}
+
+.menu-toggler span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  position: relative;
+  transition: 0.3s linear;
+}
+
+
+
+@keyframes load2{
+    0%{
+        top: -80px;
+        opacity: 0;
+    }100%{
+        top: 0px;
+        opacity: 0.8;
+    }
+}
+
+
+/*RWD 網頁框架*/
+@media screen and (max-width: 980px){
+
+  .navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1000px;
+    height: 70px;
+    top: 0;
+    background-color: rgb(123, 161, 197);
+    overflow: hidden;
+    font-size: 20px;
+    color: rgb(234, 247, 255);
+    opacity: 0.8;
+    z-index: 1000;
+    }
+
+    
+    .navanim{
+      display:none;
+    }
+
+    .titleimg{
+      background-image: url("../img/head.jpeg");
+      height: 100vh;
+      background-repeat: no-repeat;
+      
+      background-attachment: fixed;
+      width: 100vw;
+      transition: 0.5s ease 0s;
+      animation: load 0.5s;
+
+      
+    
+  }
+}
+
+  @media screen and (max-width: 600px){
+   
+    .navbar {
+      position: fixed;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 700px;
+      height: 70px;
+      top: 0;
+      background-color: rgb(123, 161, 197);
+      overflow: hidden;
+      font-size: 20px;
+      color: rgb(234, 247, 255);
+      opacity: 0.8;
+      z-index: 1000;
+  }
+
+    .navbar .navtitle {
+    padding-left: 20px;
+    width: 34%;
+    }
+
+       .navtitle {
+        padding-left: 50px;
+        width: 30%;
+        font-size: 10px;
+      }
+
+     
+       .navtitle strong {
+        
+        font-size: 35px;
+        font-weight: bolder;
+      }
+
+      .navbar .a{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: #353b48;
+        top: 0;
+        right: -100%;
+        max-width: 400px;
+        padding: 80px 50px;
+        transition: .3s linear;
+      }
+
+      .titleimg .title{
+        width: 700px;
+        padding:140px;
+        font-size: 55px;
+        font-weight: bolder;
+        color: rgba(49, 70, 87,0.9);
+    }
+
+    .titleimg{
+      background-image: url("../img/head.jpeg");
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      width: 100vw;
+      transition: 0.5s ease 0s;
+      animation: load 0.5s;
+  }
+
+
+}
